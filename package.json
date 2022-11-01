@@ -1,0 +1,22 @@
+{
+  "type": "module",
+  "name": "calculadora",
+  "version": "1.0.0",
+  "description": "estimador costos de software",
+  "main": "index.js",
+  "homepage": "https://P-mcg01.github.io/calculadora",
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "PabloCG",
+  "license": "GNU V3",
+  "dependencies": {
+    "lil-gui": "^0.17.0",
+    "three": "^0.146.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
+  }
+}
