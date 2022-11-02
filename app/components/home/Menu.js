@@ -1,3 +1,5 @@
+import calc from "/app/assets/img/calc.svg";
+
 import { Card } from "./Card.js";
 
 export function Menu() {
@@ -6,7 +8,7 @@ export function Menu() {
 
   for (let i = 0; i < 3; i++) {
     const $icono = document.createElement("img");
-    $icono.src = "/app/assets/img/calc.svg";
+    $icono.src = calc;
     $icono.alt = `logo ${i}`;
 
     iconos.push($icono);

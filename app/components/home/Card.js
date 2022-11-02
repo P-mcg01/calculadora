@@ -8,7 +8,7 @@ export function Card(icono, titulo, color, metodo) {
     { transform: "rotate(360deg) scale(1)" },
   ];
   const duracion = {
-    duration: 1000,
+    duration: 500,
     iterations: 1,
   };
 

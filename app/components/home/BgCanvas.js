@@ -1,4 +1,5 @@
 import * as THREE from "/node_modules/three/build/three.module.js";
+import texture from "/app/assets/textures/5.jpg";
 //import * as dat from "/node_modules/lil-gui/dist/lil-gui.esm.js";
 
 export function BgCanvas() {
@@ -21,7 +22,7 @@ export function BgCanvas() {
 
   // Texture loader
   const textureLoader = new THREE.TextureLoader();
-  const gradientTexture = textureLoader.load("/app/assets/textures/5.jpg");
+  const gradientTexture = textureLoader.load(texture);
   gradientTexture.magFilter = THREE.NearestFilter;
 
   /**
@@ -152,10 +153,10 @@ export function BgCanvas() {
    * Renderizador
    */
   const renderer = new THREE.WebGLRenderer({
-    alpha: false,
+    alpha: true,
     antialias: false,
   });
-  renderer.setClearColor(new THREE.Color("rgb(27, 8, 42)"), 1);
+  //renderer.setClearColor(new THREE.Color("rgb(27, 8, 42)"), 1);
   renderer.setSize(sizes.width, sizes.height - 82);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 

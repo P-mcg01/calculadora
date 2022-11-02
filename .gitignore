@@ -145,4 +145,9 @@ dist
 /app/helpers/ajax.js
 /app/helpers/helpHttp.js
 
+# assets
+/app/assets/fonts/
+/app/assets/img/
+/app/assets/textures/
+
 # End of https://www.toptal.com/developers/gitignore/api/node
