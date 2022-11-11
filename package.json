@@ -5,7 +5,7 @@
   "main": "index.js",
   "homepage": "https://P-mcg01.github.io/calculadora",
   "scripts": {
-    "build": "webpack --mode production --entry ./app/index.js",
+    "build": "webpack --mode production",
     "deploy": "gh-pages -d dist",
     "start": "webpack serve --mode development --open ",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,6 +13,7 @@
   "author": "PabloCG",
   "license": "GNU V3",
   "dependencies": {
+    "katex": "^0.16.3",
     "lil-gui": "^0.17.0",
     "three": "^0.146.0"
   },

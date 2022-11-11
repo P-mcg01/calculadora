@@ -1,4 +1,6 @@
-export function Card(icono, titulo, color, metodo) {
+import { Form } from "../forms/Form.js";
+
+export function Card(icono, titulo, color, fieldset) {
   const $card = document.createElement("div");
   const $titulo = document.createElement("span");
   const $gradiente = `linear-gradient(35deg, ${color.stop1} 0%, ${color.stop2} 100%)`;
@@ -23,7 +25,7 @@ export function Card(icono, titulo, color, metodo) {
   });
 
   $card.addEventListener("click", (e) => {
-    location.href = location.origin + `/#${metodo}`;
+    document.getElementById("root").appendChild(Form(fieldset, titulo));
   });
 
   return $card;

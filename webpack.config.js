@@ -3,12 +3,22 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  entry: "./app/index.js",
+  entry: {
+    home: "./app/index.js",
+    cocomo: "./app/components/cocomo/Cocomo.js",
+  },
   output: {
     path: path.resolve(__dirname, "dist"),
+    filename: "[name].js",
+    clean: true,
+  },
+  optimization: {
+    splitChunks: {
+      chunks: "all",
+    },
   },
   resolve: {
-    extensions: [".js"],
+    extensions: [".js", ".css"],
   },
   module: {
     rules: [
@@ -36,7 +46,7 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              publicPath: "./",
+              publicPath: "../../",
             },
           },
           "css-loader",
@@ -53,6 +63,9 @@ module.exports = {
       template: "./index.html",
       filename: "./index.html",
     }),
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({
+      linkType: "text/css",
+      filename: "assets/styles/[name].css",
+    }),
   ],
 };

@@ -1,21 +1,10 @@
 import * as THREE from "/node_modules/three/build/three.module.js";
 import texture from "/app/assets/textures/5.jpg";
-//import * as dat from "/node_modules/lil-gui/dist/lil-gui.esm.js";
 
 export function BgCanvas() {
-  /**
-   * Debug
-   */
-  //const gui = new dat.GUI();
-
   const parameters = {
     materialColor: "#2E89FF",
   };
-
-  /*gui.addColor(parameters, "materialColor").onChange(() => {
-    material.color.set(parameters.materialColor);
-    particles.material.color.set(parameters.materialColor);
-  });*/
 
   // Escena
   const scene = new THREE.Scene();
@@ -98,8 +87,6 @@ export function BgCanvas() {
   luz.position.set(0, 10, 0);
   luzAmbiental.position.set(5, -5, 0);
   scene.add(luz, luzAmbiental);
-  /* gui.addColor(luz, "color").name("color");
-  gui.add(luz, "intensity").name("intensidad").min(0).max(10); */
 
   /**
    * Dimensiones

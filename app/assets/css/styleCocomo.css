@@ -1,0 +1,170 @@
+@font-face {
+  font-family: "Ubuntu";
+  src: url("/app/assets/fonts/Ubuntu-Light.ttf") format("truetype");
+}
+
+html {
+  box-sizing: border-box;
+  font-family: Ubuntu, sans-serif;
+  font-size: 16px;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgb(53, 53, 65);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: rgb(96, 187, 247);
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  color: #fff;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+main {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: stretch;
+  gap: 0.25rem;
+  height: 88.472vh;
+  margin: 5vh auto;
+  width: 95vw;
+}
+
+.panel {
+  border-radius: 1rem;
+  backdrop-filter: blur(13px);
+  border-bottom: thin solid #106fc8;
+  border-left: thin solid #106fc8;
+  box-shadow: 5px 4px 12px rgb(0 0 0 / 50%);
+}
+
+aside {
+  flex-basis: 32%;
+  background-color: rgba(26, 32, 105, 0.65);
+}
+
+.title {
+  width: 100%;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom: 0.15rem solid #295eb3;
+  font-size: 0.833rem;
+  font-weight: 400;
+  text-align: center;
+  background-color: rgba(46, 55, 169, 0.5);
+  box-shadow: 0 4px 8px rgb(0 0 0 / 20%);
+}
+
+.title > h2 {
+  margin: 0;
+  padding: 0.5rem 0;
+}
+
+ul {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.5rem;
+  align-items: stretch;
+  margin: 0;
+  padding: 0.5rem;
+}
+
+li {
+  margin: 0;
+  padding: 0.5rem 0;
+  text-align: center;
+  text-transform: capitalize;
+  list-style: none;
+  cursor: pointer;
+}
+
+li:hover {
+  text-transform: uppercase;
+  background-color: rgba(181, 191, 255, 0.2);
+}
+
+section {
+  flex-basis: 67%;
+  background-color: rgba(14, 16, 86, 0.75);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+}
+
+#process {
+  border-top: 1px solid #106fc8;
+  padding: 1rem 0.5rem;
+}
+
+#process > p {
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #5afbce;
+}
+
+.itemCard {
+  position: relative;
+  border-radius: 1rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.itemCard > div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  border-radius: 1rem;
+  padding: 0.5rem 1.25rem;
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+    90deg,
+    rgb(2 0 54 / 54%) 0%,
+    rgb(14 12 62 / 65%) 20%,
+    rgb(38 114 209) 100%
+  );
+}
+
+.itemCard > div h4 {
+  align-self: center;
+  margin: 0;
+  padding: 0 1rem;
+  font-weight: 500;
+  font-size: 1rem;
+  text-align: center;
+  color: #f5dfff;
+}
+
+.itemCard > div p {
+  margin: 0;
+}
+
+.mspace {
+  height: 0.5rem;
+}

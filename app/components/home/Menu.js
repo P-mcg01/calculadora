@@ -1,6 +1,7 @@
 import calc from "/app/assets/img/calc.svg";
 
 import { Card } from "./Card.js";
+import { CocomoFieldSet } from "../forms/CocomoFieldSet.js";
 
 export function Menu() {
   const $menu = document.createElement("section");
@@ -23,7 +24,7 @@ export function Menu() {
         stop1: "rgb(19, 129, 176)",
         stop2: "rgb(42, 185, 187)",
       },
-      "cocomo_i"
+      CocomoFieldSet()
     )
   );
   $menu.appendChild(
@@ -34,7 +35,7 @@ export function Menu() {
         stop1: "rgb(157, 26, 129)",
         stop2: "rgb(221, 18, 99)",
       },
-      "punto_funcion"
+      CocomoFieldSet()
     )
   );
   $menu.appendChild(
@@ -45,7 +46,7 @@ export function Menu() {
         stop1: "rgb(86, 14, 130)",
         stop2: "rgb(106, 16, 118)",
       },
-      "lcd"
+      CocomoFieldSet()
     )
   );
 
