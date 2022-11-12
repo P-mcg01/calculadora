@@ -63,6 +63,10 @@ aside {
 
 .title {
   width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  align-items: center;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
   border-bottom: 0.15rem solid #295eb3;
@@ -71,6 +75,10 @@ aside {
   text-align: center;
   background-color: rgba(46, 55, 169, 0.5);
   box-shadow: 0 4px 8px rgb(0 0 0 / 20%);
+}
+
+.title img {
+  cursor: pointer;
 }
 
 .title > h2 {
@@ -94,6 +102,7 @@ li {
   text-transform: capitalize;
   list-style: none;
   cursor: pointer;
+  transition: background-color 500ms ease-in-out 50ms;
 }
 
 li:hover {
@@ -143,12 +152,18 @@ section {
   padding: 0.5rem 1.25rem;
   top: 0;
   left: 0;
+  border: 1px solid #00628f;
   background: linear-gradient(
     90deg,
-    rgb(2 0 54 / 54%) 0%,
-    rgb(14 12 62 / 65%) 20%,
-    rgb(38 114 209) 100%
+    rgba(16, 22, 58, 0.5) 0%,
+    rgba(16, 22, 58, 1) 100%
   );
+  transition: background 400ms ease-in-out 50ms, border 400ms ease-in-out 50ms;
+}
+
+.itemCard > div:hover {
+  border: 2px solid #0188c7;
+  background-color: rgba(16, 22, 58, 0.95);
 }
 
 .itemCard > div h4 {

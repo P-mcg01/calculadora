@@ -79,6 +79,10 @@ export class CocomoModel {
     };
   }
 
+  toFixed(n, fixed) {
+    return `${n}`.match(new RegExp(`^\\d+(?:\.\\d{0,${fixed}})?`))[0];
+  }
+
   renderFormula(id) {
     const $procedimiento = document.getElementById("process");
     const option = {
@@ -111,11 +115,11 @@ export class CocomoModel {
            \\mathcal{E = ${this._submodel.a} \\cdot (${this._mldc})^{${
             this._submodel.b
           }}} \\newline
-           \\mathcal{E = ${this._submodel.a} \\cdot ${Math.pow(
-            this._mldc,
-            this._submodel.b
+           \\mathcal{E = ${this._submodel.a} \\cdot ${this.toFixed(
+            Math.pow(this._mldc, this._submodel.b),
+            6
           )}} \\newline
-           \\mathcal{E = ${this._esfuerzo}} \\newline
+           \\mathcal{E = ${this.toFixed(this._esfuerzo, 6)}} \\newline
            \\mathcal{E \\approx ${Math.ceil(this._esfuerzo)}
            \\enspace \\large\\frac{persona}{mes} }`,
           process,
@@ -125,14 +129,15 @@ export class CocomoModel {
       case "c-td":
         this.katex.render(
           `\\mathcal{TD = c \\cdot (E)^d} \\newline
-           \\mathcal{TD = ${this._submodel.c} \\cdot (${this._esfuerzo})^{${
-            this._submodel.d
-          }}} \\newline
-           \\mathcal{TD = ${this._submodel.c} \\cdot ${Math.pow(
+           \\mathcal{TD = ${this._submodel.c} \\cdot (${this.toFixed(
             this._esfuerzo,
-            this._submodel.d
+            6
+          )})^{${this._submodel.d}}} \\newline
+           \\mathcal{TD = ${this._submodel.c} \\cdot ${this.toFixed(
+            Math.pow(this._esfuerzo, this._submodel.d),
+            6
           )}} \\newline
-           \\mathcal{TD = ${this._tiempoDes}} \\newline
+           \\mathcal{TD = ${this.toFixed(this._tiempoDes, 6)}} \\newline
            \\mathcal{TD \\approx ${Math.ceil(
              this._tiempoDes
            )} \\enspace meses}`,
@@ -143,10 +148,11 @@ export class CocomoModel {
       case "c-pn":
         this.katex.render(
           `\\mathcal{PN = \\large\\frac{E}{TD}} \\newline
-           \\mathcal{PN = \\large\\frac{${this._esfuerzo}}{${
-            this._tiempoDes
-          }}} \\newline
-           \\mathcal{PN = ${this._personal}} \\newline
+           \\mathcal{PN = \\large\\frac{${this.toFixed(
+             this._esfuerzo,
+             6
+           )}}{${this.toFixed(this._tiempoDes, 6)}}} \\newline
+           \\mathcal{PN = ${this.toFixed(this._personal, 6)}} \\newline
            \\mathcal{PN \\approx ${Math.ceil(
              this._personal
            )} \\enspace \\large\\frac{programador}{mes} }`,
@@ -157,10 +163,11 @@ export class CocomoModel {
       case "c-p":
         this.katex.render(
           `\\mathcal{P = \\large\\frac{LDC}{E}} \\newline
-           \\mathcal{P = \\large\\frac{${this._ldc}}{${
-            this._esfuerzo
-          }}}\\newline
-           \\mathcal{P = ${this._produccion}}\\newline
+           \\mathcal{P = \\large\\frac{${this._ldc}}{${this.toFixed(
+            this._esfuerzo,
+            6
+          )}}}\\newline
+           \\mathcal{P = ${this.toFixed(this._produccion, 6)}}\\newline
            \\mathcal{P \\approx ${Math.floor(this._produccion)}}
            \\enspace \\large\\frac{ins \\cdot programador}{mes}`,
           process,
@@ -170,8 +177,10 @@ export class CocomoModel {
       case "c-c":
         this.katex.render(
           `\\mathcal{C = E \\cdot CH} \\newline
-           \\mathcal{C = ${this._esfuerzo} \\cdot ${this.honorario}} \\newline
-           \\mathcal{C = ${this._costo}}\\newline
+           \\mathcal{C = ${this.toFixed(this._esfuerzo, 6)} \\cdot ${
+            this.honorario
+          }} \\newline
+           \\mathcal{C = ${this.toFixed(this._costo, 6)}}\\newline
            \\mathcal{C \\approx ${Math.ceil(this._costo)}} \\enspace Bs.`,
           process,
           option

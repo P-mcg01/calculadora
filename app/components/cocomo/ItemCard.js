@@ -71,8 +71,31 @@ export function ItemCard(titulo, image, resultado, katex) {
       );
       break;
     case "Sub Modelo":
+      $card.style.backgroundImage = `url(${image})`;
+      katex.render(
+        `\\texttt{${resultado.nombre}} \\newline
+         \\lceil\\texttt{
+          a: ${resultado.a} \\quad
+          b: ${resultado.b}
+         }\\rceil \\newline
+         \\lfloor\\texttt{
+          c: ${resultado.c} \\quad
+          d: ${resultado.d}
+         }\\rfloor`,
+        $result,
+        options
+      );
       break;
     case "Datos":
+      katex.render(
+        `\\texttt{\\small{Flujo E/S:}} \\enspace
+         \\texttt{ ${resultado[0]} } \\newline
+         \\texttt{\\small{Honorario:}} \\enspace
+         \\texttt{ ${resultado[1]} \\small{Bs}}`,
+        $result,
+        options
+      );
+      $card.style.backgroundImage = `url(${image})`;
       break;
   }
 

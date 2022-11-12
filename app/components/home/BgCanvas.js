@@ -27,7 +27,7 @@ export function BgCanvas() {
     gradientMap: gradientTexture,
   });
   const material3 = new THREE.MeshToonMaterial({
-    color: "#0A6665",
+    color: "#a39f1a",
     gradientMap: gradientTexture,
   });
 
@@ -54,7 +54,7 @@ export function BgCanvas() {
   /**
    * Particulas
    */
-  const particlesCount = 100;
+  const particlesCount = 180;
   const position = new Float32Array(particlesCount * 3);
 
   for (let i = 0; i < particlesCount; i++) {

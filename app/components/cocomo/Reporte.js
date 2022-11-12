@@ -3,15 +3,18 @@ import code from "../../assets/img/coding.jpg";
 import programmer from "../../assets/img/programmers.jpg";
 import time from "../../assets/img/time.jpeg";
 import money from "../../assets/img/money.jpg";
+import geometry from "../../assets/img/geometry.png";
 
 export function Reporte(resultado, katex) {
   const $section = document.createElement("section");
 
   $section.classList.add("panel");
 
-  $section.appendChild(ItemCard("Sub Modelo", resultado.submodelo, katex));
   $section.appendChild(
-    ItemCard("Datos", [resultado.es, resultado.honorario], katex)
+    ItemCard("Sub Modelo", geometry, resultado.submodelo, katex)
+  );
+  $section.appendChild(
+    ItemCard("Datos", geometry, [resultado.es, resultado.honorario], katex)
   );
   $section.appendChild(
     ItemCard("Lineas de código", code, resultado.ldc, katex)
