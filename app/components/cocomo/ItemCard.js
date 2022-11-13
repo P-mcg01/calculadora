@@ -102,7 +102,12 @@ export function ItemCard(titulo, image, resultado, katex) {
   $content.appendChild($title);
   $content.appendChild($result);
   $card.classList.add("itemCard");
+  let tiempo = 1500 + Math.random() * 1000;
+
   $card.appendChild($content);
+  setTimeout(() => {
+    $card.style.opacity = 1;
+  }, tiempo);
 
   return $card;
 }

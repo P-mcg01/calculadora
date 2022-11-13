@@ -112,7 +112,7 @@ li:hover {
 
 section {
   flex-basis: 67%;
-  background-color: rgba(14, 16, 86, 0.75);
+  background-color: rgba(14, 16, 86, 0.35);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
   gap: 0.5rem;
@@ -122,6 +122,7 @@ section {
 #process {
   border-top: 1px solid #106fc8;
   padding: 1rem 0.5rem;
+  transition: opacity 900ms ease-in-out;
 }
 
 #process > p {
@@ -138,6 +139,8 @@ section {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 1000ms ease-in;
 }
 
 .itemCard > div {
@@ -155,8 +158,8 @@ section {
   border: 1px solid #00628f;
   background: linear-gradient(
     90deg,
-    rgba(16, 22, 58, 0.5) 0%,
-    rgba(16, 22, 58, 1) 100%
+    rgba(0, 21, 106, 0.5) 0%,
+    rgba(0, 39, 124, 0.9) 70%
   );
   transition: background 400ms ease-in-out 50ms, border 400ms ease-in-out 50ms;
 }
@@ -170,10 +173,10 @@ section {
   align-self: center;
   margin: 0;
   padding: 0 1rem;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 1rem;
   text-align: center;
-  color: #f5dfff;
+  color: #b2ff5f;
 }
 
 .itemCard > div p {

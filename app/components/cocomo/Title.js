@@ -9,7 +9,7 @@ export function Title(titulo) {
   $img.alt = "home";
 
   $img.addEventListener("click", (e) => {
-    location.href = location.origin;
+    location.href = location.origin + "/calculadora";
   });
 
   $div.classList.add("title");

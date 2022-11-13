@@ -3,12 +3,17 @@ export function MenuItem(text, id, modelo) {
   $li.id = id;
 
   $li.addEventListener("click", (e) => {
-    modelo.renderFormula(id);
+    const proceso = document.querySelector("#process");
     const titulo = document.createElement("p");
-    titulo.innerText = text;
-    document
-      .querySelector("#process")
-      .insertAdjacentElement("afterbegin", titulo);
+
+    proceso.style.opacity = 0;
+
+    setTimeout(() => {
+      titulo.innerText = text;
+      modelo.renderFormula(id);
+      proceso.insertAdjacentElement("afterbegin", titulo);
+      proceso.style.opacity = 1;
+    }, 900);
   });
 
   $li.innerText = text;

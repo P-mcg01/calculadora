@@ -2,6 +2,17 @@ import cocomo from "./cocomo.js";
 
 export class CocomoModel {
   constructor(flujoES, honorario, katex) {
+    if (!Number.isInteger(flujoES)) {
+      Math.trunc(flujoES);
+    }
+    if (flujoES < 0) {
+      flujoES *= -1;
+    }
+
+    if (honorario < 0) {
+      honorario *= -1;
+    }
+
     this.flujoES = flujoES;
     this.honorario = honorario;
     this.katex = katex;

@@ -29,7 +29,6 @@ function SearchStyle(viewName) {
   switch (viewName) {
     case "home":
       for (let css of estilos) {
-        console.log(css);
         if (css.href.endsWith("cocomo.css")) {
           css.disabled = true;
         }
