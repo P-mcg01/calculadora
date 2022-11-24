@@ -1,9 +1,10 @@
-export function Form(fieldset, titulo) {
+export function FormPF(fieldset, titulo) {
   const $container = document.createElement("div");
   const $border = document.createElement("div");
   const $formulario = document.createElement("form");
   const $titulo = document.createElement("h2");
   const $button = document.createElement("button");
+
   $button.innerText = "PROCESAR";
   $titulo.innerText = titulo;
 
@@ -18,15 +19,18 @@ export function Form(fieldset, titulo) {
   });
   $button.addEventListener("click", (e) => {
     e.preventDefault();
-    const txtES = document.getElementById("e_s").value,
-      txtHonorario = document.getElementById("ch").value;
+    const txtDias = document.getElementById("lab_dias").value,
+      txtHoras = document.getElementById("lab_horas").value,
+      txtDevs = document.getElementById("devs").value,
+      txtHonorario = document.getElementById("honorarios").value;
 
-    if (txtES && txtHonorario) {
+    if (txtDias && txtHoras && txtDevs && txtHonorario) {
       location.href =
-        location.href + `?param1=${txtES}&param2=${txtHonorario}#cocomo_i`;
+        location.href +
+        `?dias_lab=${txtDias}&hrs_lab=${txtHoras}&devs=${txtDevs}&sueldo=${txtHonorario}#pf`;
     } else {
       const message = document.createElement("p");
-      message.innerText = "Rellene los campos";
+      message.innerText = "Rellene el formulario correctamente.";
       message.classList.add("alert");
       e.target.parentNode.insertAdjacentElement("afterbegin", message);
 

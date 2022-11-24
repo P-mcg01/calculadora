@@ -2,12 +2,11 @@
 
 ### _ing. de software_
 
-La applicación estimar el tiempo y el costo de desarrollo de un producto de software.
+Calculadora.
 
 ---
 
-## Modelos implementados
+## Modelos
 
 - COCOMO BÁSICO
 - PUNTOS DE FUNCIÓN
-- LINEAS DE CÓDIGO

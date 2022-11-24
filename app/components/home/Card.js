@@ -1,6 +1,7 @@
-import { Form } from "../forms/Form.js";
+import { FormCocomo } from "../forms/FormCocomo.js";
+import { FormPF } from "../forms/FormPF.js";
 
-export function Card(icono, titulo, color, fieldset) {
+export function Card(id, icono, titulo, color, fieldset) {
   const $card = document.createElement("div");
   const $titulo = document.createElement("span");
   const $gradiente = `linear-gradient(35deg, ${color.stop1} 0%, ${color.stop2} 100%)`;
@@ -16,6 +17,7 @@ export function Card(icono, titulo, color, fieldset) {
 
   $titulo.innerText = titulo;
   $card.classList.add("card");
+  $card.id = id;
   $card.style.background = $gradiente;
   $card.appendChild(icono);
   $card.appendChild($titulo);
@@ -25,7 +27,13 @@ export function Card(icono, titulo, color, fieldset) {
   });
 
   $card.addEventListener("click", (e) => {
-    document.getElementById("root").appendChild(Form(fieldset, titulo));
+    if (e.currentTarget.id === "cocomo") {
+      document.getElementById("root").appendChild(FormCocomo(fieldset, titulo));
+    }
+
+    if (e.currentTarget.id == "pf") {
+      document.getElementById("root").appendChild(FormPF(fieldset, titulo));
+    }
   });
 
   return $card;

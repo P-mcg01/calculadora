@@ -6,6 +6,7 @@ module.exports = {
   entry: {
     home: "./app/index.js",
     cocomo: "./app/components/cocomo/Cocomo.js",
+    pf: "./app/components/pf/PF.js",
   },
   output: {
     path: path.resolve(__dirname, "dist"),

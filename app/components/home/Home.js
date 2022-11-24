@@ -7,11 +7,12 @@ import { Main } from "./Main.js";
 export function Home($root) {
   $root.appendChild(Loader());
 
+  $root.appendChild(Header());
+  $root.appendChild(Banner());
+  $root.appendChild(Division());
+  $root.appendChild(Main());
   setTimeout(() => {
     document.querySelector(".loader").style.setProperty("display", "none");
-    $root.appendChild(Header());
-    $root.appendChild(Banner());
-    $root.appendChild(Division());
-    $root.appendChild(Main());
-  }, 2000);
+    document.documentElement.style.overflowY = "scroll";
+  }, 3500);
 }

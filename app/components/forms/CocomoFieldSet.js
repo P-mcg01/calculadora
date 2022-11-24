@@ -7,7 +7,7 @@ export function CocomoFieldSet() {
       id: "e_s",
       label: "Flujo E/S",
       placeholder: "Ingresa el flujo de E/S",
-      min: 0,
+      min: 1,
       max: 999999,
     })
   );
@@ -16,7 +16,7 @@ export function CocomoFieldSet() {
       id: "ch",
       label: "Costo honorario",
       placeholder: "Ingresa el costo honorario",
-      min: 0,
+      min: 1,
       max: 999999,
     })
   );

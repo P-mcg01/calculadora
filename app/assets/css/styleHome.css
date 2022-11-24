@@ -36,10 +36,21 @@ body {
 }
 
 .loader {
-  margin: 35vh auto;
-  display: block;
-  width: 9rem;
-  height: 9rem;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  min-height: 100%;
+  background-color: #0a0a30;
+  z-index: 100;
+}
+
+.loader > img {
+  width: 25%;
 }
 
 .cabezera {
@@ -201,7 +212,7 @@ main p {
   width: 100vw;
   height: 100vh;
   background-color: rgba(18, 30, 94, 0.45);
-  /*backdrop-filter: blur(3px);*/
+  backdrop-filter: blur(8px);
 }
 
 .border {
@@ -211,7 +222,7 @@ main p {
     rgba(123, 42, 180, 1) 100%
   );
   padding: 0.25rem;
-  border-radius: 15px;
+  border-radius: 16px;
   box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.35);
 }
 
@@ -222,7 +233,7 @@ main p {
   align-items: center;
   width: 50vw;
   padding: 3rem;
-  border-radius: 15px;
+  border-radius: 16px;
   background-color: #10163b;
 }
 
