@@ -20,7 +20,11 @@ export function Pregunta(id, num, texto) {
   ];
   let ids = ["no-inf", "inf-in", "inf-mod", "inf-med", "inf-sig", "inf-fuer"];
   for (let i = 0; i < 6; i++) {
-    radioPanel.appendChild(opcion(rango[i], ids[i] + num, num));
+    if (i === 0) {
+      radioPanel.appendChild(opcion(rango[i], ids[i] + num, num, true));
+    } else {
+      radioPanel.appendChild(opcion(rango[i], ids[i] + num, num));
+    }
   }
   pregunta.innerText = texto;
   pregunta.appendChild(logo);
@@ -30,7 +34,7 @@ export function Pregunta(id, num, texto) {
   return query;
 }
 
-function opcion(titulo, id, num) {
+function opcion(titulo, id, num, check = false) {
   const op = document.createElement("div");
   const radio = document.createElement("input");
   const etiqueta = document.createElement("label");
@@ -38,6 +42,7 @@ function opcion(titulo, id, num) {
   etiqueta.innerText = titulo;
   etiqueta.htmlFor = id;
   radio.type = "radio";
+  radio.checked = check;
   radio.name = "pregunta-" + num;
   radio.id = id;
   op.appendChild(radio);

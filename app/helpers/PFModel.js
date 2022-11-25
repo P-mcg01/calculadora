@@ -23,6 +23,7 @@ export class PFModel {
     ALI: 0,
     ALE: 0,
   };
+  factor_ajuste = 0;
 
   constructor(vars) {
     this.variables = vars;
@@ -46,5 +47,13 @@ export class PFModel {
 
   get countFun() {
     return this.countFun;
+  }
+
+  get factor_ajuste() {
+    return this.factor_ajuste;
+  }
+
+  set factor_ajuste(factor) {
+    this.factor_ajuste = factor;
   }
 }

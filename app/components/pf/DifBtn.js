@@ -26,7 +26,6 @@ export function DifBtn(imagen, titulo, modelo) {
         btn.style.opacity = "0.5";
       }
     });
-    console.log(modelo);
   });
 
   return figure;

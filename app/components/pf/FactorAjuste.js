@@ -2,11 +2,12 @@ import { Botones } from "./Botones";
 import { Funciones } from "./Funciones";
 import { Panel } from "./Panel";
 import { Pregunta } from "./Pregunta";
+import { ReportePF } from "./ReportePF";
 
-export function FactorAjuste(main) {
+export function FactorAjuste(main, modelo) {
   const preguntas = [
     "¿El sistema requiere respaldo y recupreración confiables?",
-    "¿Se requieren comunicaciones de datos especializadas para transferir informacion a hacia o desde la aplicación?",
+    "¿Se requieren comunicaciones de datos especializadas para transferir información hacia o desde la aplicación?",
     "¿Existen funciones de procesamiento distribuidas?",
     "¿El desempeño es crucial?",
     "¿El sistema correrá en un entorno operativo existente enormemente utilizado?",
@@ -34,7 +35,7 @@ export function FactorAjuste(main) {
   }
 
   panelBotones.appendChild(btnAnterior());
-  panelBotones.appendChild(btnReporte());
+  panelBotones.appendChild(btnReporte(modelo));
 
   panel.appendChild(panelFunciones);
   panel.appendChild(panelBotones);
@@ -68,8 +69,42 @@ function btnAnterior() {
   return button;
 }
 
-function btnReporte() {
+function btnReporte(modelo) {
   const button = document.createElement("button");
+  const $preguntas = document.getElementsByClassName("card-p");
+
+  button.addEventListener("click", (e) => {
+    e.stopPropagation();
+    let numero = 1;
+
+    for (let pregunta of $preguntas) {
+      let opcion = pregunta.querySelector(
+        `input[name='pregunta-${numero++}']:checked`
+      ).nextElementSibling.textContent;
+
+      switch (opcion) {
+        case "Sin influencia":
+          modelo.factor_ajuste += 0;
+          break;
+        case "Influencia incidental":
+          modelo.factor_ajuste += 1;
+          break;
+        case "Influencia moderada":
+          modelo.factor_ajuste += 2;
+          break;
+        case "Influencia media":
+          modelo.factor_ajuste += 3;
+          break;
+        case "Influencia significativa":
+          modelo.factor_ajuste += 4;
+          break;
+        case "Influencia fuerte":
+          modelo.factor_ajuste += 5;
+          break;
+      }
+    }
+    ReportePF(modelo);
+  });
 
   button.innerText = "Finalizar";
 
