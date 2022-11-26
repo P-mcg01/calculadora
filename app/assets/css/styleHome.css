@@ -282,6 +282,13 @@ form > h2 {
   background-color: #b42754;
 }
 
+select {
+  padding: 0.5rem 0;
+  background-color: #0e1436;
+  border: thin solid #332b62;
+  color: #666c8a;
+}
+
 .alert {
   font-size: 1.25rem;
   font-weight: 500;

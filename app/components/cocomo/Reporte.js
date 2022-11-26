@@ -10,9 +10,7 @@ export function Reporte(resultado, katex) {
 
   $section.classList.add("panel");
 
-  $section.appendChild(
-    ItemCard("Sub Modelo", geometry, resultado.submodelo, katex)
-  );
+  $section.appendChild(ItemCard("Modo", geometry, resultado.submodelo, katex));
   $section.appendChild(
     ItemCard("Datos", geometry, [resultado.es, resultado.honorario], katex)
   );

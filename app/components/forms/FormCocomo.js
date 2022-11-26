@@ -19,11 +19,14 @@ export function FormCocomo(fieldset, titulo) {
   $button.addEventListener("click", (e) => {
     e.preventDefault();
     const txtES = document.getElementById("e_s").value,
-      txtHonorario = document.getElementById("ch").value;
+      txtHonorario = document.getElementById("ch").value,
+      txtP = document.getElementById("p").value,
+      txtModo = document.getElementById("submodel").value;
 
     if (txtES && txtHonorario) {
       location.href =
-        location.href + `?param1=${txtES}&param2=${txtHonorario}#cocomo_i`;
+        location.href +
+        `?param1=${txtES}&param2=${txtHonorario}&param3=${txtP}&param4=${txtModo}#cocomo_i`;
     } else {
       const message = document.createElement("p");
       message.innerText = "Rellene los campos";

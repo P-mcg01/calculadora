@@ -1,7 +1,7 @@
 import cocomo from "./cocomo.js";
 
 export class CocomoModel {
-  constructor(flujoES, honorario, katex) {
+  constructor(flujoES, honorario, p, modo, katex) {
     if (!Number.isInteger(flujoES)) {
       Math.trunc(flujoES);
     }
@@ -13,8 +13,14 @@ export class CocomoModel {
       honorario *= -1;
     }
 
+    if (p < 0) {
+      p = 80;
+    }
+
     this.flujoES = flujoES;
     this.honorario = honorario;
+    this.p = p;
+    this.modo = modo;
     this.katex = katex;
 
     this._submodel = null;
@@ -28,7 +34,7 @@ export class CocomoModel {
   }
 
   ldc() {
-    this._ldc = 90 * this.flujoES;
+    this._ldc = this.p * this.flujoES;
   }
 
   mldc() {
@@ -36,12 +42,16 @@ export class CocomoModel {
   }
 
   getSubmodelo() {
-    if (this._ldc < 50000) {
-      this._submodel = cocomo.organico;
-    } else if (this._ldc < 300000) {
-      this._submodel = cocomo.semiEncajado;
-    } else if (this._ldc >= 300000) {
-      this._submodel = cocomo.empotrado;
+    switch (this.modo) {
+      case "Organico":
+        this._submodel = cocomo.organico;
+        break;
+      case "Semiencajado":
+        this._submodel = cocomo.semiEncajado;
+        break;
+      case "Empotrado":
+        this._submodel = cocomo.empotrado;
+        break;
     }
   }
 
@@ -105,7 +115,7 @@ export class CocomoModel {
       case "c-ldc":
         this.katex.render(
           `\\mathcal{LDC = P \\cdot flujoE/S} \\newline
-           \\mathcal{LDC = 90 \\cdot ${this.flujoES}} \\newline
+           \\mathcal{LDC = ${this.p} \\cdot ${this.flujoES}} \\newline
            \\mathcal{LDC = ${this._ldc} \\enspace ldc} \\newline`,
           process,
           option

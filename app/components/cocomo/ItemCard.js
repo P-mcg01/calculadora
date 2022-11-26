@@ -70,7 +70,7 @@ export function ItemCard(titulo, image, resultado, katex) {
         options
       );
       break;
-    case "Sub Modelo":
+    case "Modo":
       $card.style.backgroundImage = `url(${image})`;
       katex.render(
         `\\texttt{${resultado.nombre}} \\newline

@@ -11,7 +11,14 @@ export function Cocomo($root) {
   ImageBackground(bg);
   const $main = document.createElement("main");
   const query = getQuery();
-  const model = new CocomoModel(query.param1, query.param2, katex);
+  console.log(query);
+  const model = new CocomoModel(
+    query.param1,
+    query.param2,
+    query.param3,
+    query.param4,
+    katex
+  );
   const resultado = model.calcular();
 
   $main.appendChild(Bar(model));
