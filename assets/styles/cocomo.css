@@ -187,3 +187,28 @@ section {
   height: 0.5rem;
 }
 
+table {
+  color: #e7ebfd;
+  margin: 1.5rem auto;
+}
+
+thead {
+  color: #fdfdff;
+  background-color: #5d24d7;
+  font-size: 1.1rem;
+}
+
+tfoot {
+  background-color: #6133c3;
+  font-weight: 600;
+  color: #c8deff;
+}
+
+th,
+td {
+  padding: 0.5em 1.5em;
+  background-color: rgb(24, 108, 189, 0.8);
+  border-radius: 0.25rem;
+  text-align: center;
+}
+
