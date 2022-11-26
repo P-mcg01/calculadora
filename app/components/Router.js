@@ -20,8 +20,8 @@ export function Router() {
   } else if (hash.includes("#pf")) {
     SearchStyle("pf");
     PF();
-  } else if (hash.includes("#pf_r")) {
-    console.log("limpieza");
+  } else if (hash.includes("#r_pf")) {
+    SearchStyle("cocomo");
   }
 }
 
